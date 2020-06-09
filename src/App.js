@@ -1,26 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import { Header, Repository } from './components';
-import { fetchRepos } from './api';
+import React, { useContext } from "react";
+import { Context } from "./hooks/UserInfosContext";
+import { Header, User, RepositoryList, Form } from "./components";
 
-import styles from './App.module.css';
+import styles from "./App.module.css";
 
 const App = () => {
-  const[repos, setRepos] = useState([]);
+  const { sizeValue } = useContext(Context);
+  const [size, setSize] = sizeValue;
 
-  useEffect(() => {
-    const fetchApi = async () =>{
-      setRepos(await fetchRepos('gcrodrigues'));
-    }
-
-    fetchApi()
-  }, []);
-
-  return(
+  return (
     <div className={styles.container}>
       <Header />
-      <Repository />
+      {size < 770 && (
+        <Form
+          text={"Busque por respositórios aqui."}
+          style={styles.searchForm}
+        />
+      )}
+      <User />
+      <RepositoryList />
     </div>
-  )
-}
+  );
+};
 
 export default App;

@@ -1,20 +1,45 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body{
-  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-  background-color: rgb(230, 230, 230) ;
-  display: flex;
-  justify-content: center;
-}
-
-.container{
+.container {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.searchForm {
+  display: flex;
+  background-color: rgb(255, 255, 255);
+  height: 200px;
+  width: 100%;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+.searchForm input,
+.searchForm button {
+  font-size: 1rem;
+  outline: 0;
+  border: 0;
+  background-color: #f0ecec;
+  transition: all 0.3s ease;
+  padding: 10px;
+}
+
+.searchForm input {
+  border-radius: 5px 0 0 5px;
+}
+
+.searchForm button {
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+.searchForm button:active {
+  background-color: #2f3032;
+  color: white;
+}
+
+.searchForm h3 {
+  margin-bottom: 15px;
 }
