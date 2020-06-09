@@ -1,5 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+import "./index.css";
+import { UserInfoProvider } from "./hooks/UserInfosContext";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+  <UserInfoProvider>
+    <App />
+  </UserInfoProvider>,
+  document.getElementById("root")
+);
