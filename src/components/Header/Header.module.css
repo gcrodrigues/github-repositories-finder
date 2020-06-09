@@ -1,49 +1,20 @@
-.container{
-  background-color: rgba(0, 0, 0, .8);
+.container {
+  background-color: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: space-around;
-  align-items: center; 
   color: white;
-  width: 100vw;
   padding: 10px 20px;
 }
 
-.title{
+.title {
   font-size: 2rem;
   font-weight: 100;
   display: flex;
   align-items: center;
 }
 
-.searchForm{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@media (max-width: 770px) {
+  .title {
+    font-size: 1.5rem;
+  }
 }
-
-.searchForm input,
-.searchForm button {
-  font-size: 1.1rem;
-  padding: 5px 10px;
-  outline: 0;
-  border: 0;
-  background-color: white;
-  transition: all .3s linear;
-}
-
-.searchForm input{
-  border-radius: 5px 0 0 5px;
-  padding: 6px 0;
-}
-
-
-
-.searchForm button{
-  border-radius: 0 5px 5px 0;
-  cursor: pointer;
-}
-.searchForm button:hover{
-  background-color: rgba(255, 0, 0, .8);
-  color: white;
-}
-
