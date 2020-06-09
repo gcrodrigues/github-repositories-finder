@@ -1,0 +1,22 @@
+.repositories {
+  display: flex;
+  width: 100%;
+  padding: 20px 30px;
+  flex-wrap: wrap;
+}
+.loadingContainer {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.loading {
+  font-size: 2.3rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 480px) {
+  .repositories {
+    padding: 20px 10px;
+  }
+}
