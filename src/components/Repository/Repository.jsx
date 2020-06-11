@@ -8,10 +8,17 @@ import styles from "./Repository.module.css";
 const Repository = ({ name, description, url, watch, star, forks }) => {
   const { sizeValue } = useContext(Context);
   const [size, setSize] = sizeValue;
-  const windowSize = window.innerWidth;
-  useEffect(() => {
-    setSize(windowSize);
-  }, [windowSize]);
+
+  function handleNumberFormat(value) {
+    const convertedNumber = value.toString();
+
+    if (value >= 1000 && value < 10000) {
+      return convertedNumber.split("", 2).join(".") + "k";
+    } else if (value >= 10000) {
+      return convertedNumber.split("", 2).join("") + "k";
+    }
+    return value;
+  }
 
   return (
     <div className={styles.repo}>
@@ -31,13 +38,13 @@ const Repository = ({ name, description, url, watch, star, forks }) => {
       </div>
       <ul className={styles.list}>
         <li className={cx(styles.list__item, styles.list__item__watch)}>
-          <FaEye size="18" /> {watch}
+          <FaEye size="18" /> {handleNumberFormat(watch)}
         </li>
         <li className={cx(styles.list__item, styles.list__item__star)}>
-          <FaStar size="18" /> {star}
+          <FaStar size="18" /> {handleNumberFormat(star)}
         </li>
         <li className={cx(styles.list__item, styles.list__item__forks)}>
-          <FaCodeBranch size="18" /> {forks}
+          <FaCodeBranch size="18" /> {handleNumberFormat(forks)}
         </li>
       </ul>
     </div>
