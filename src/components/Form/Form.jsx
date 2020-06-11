@@ -15,7 +15,7 @@ const Form = ({ style, text }) => {
   const [loading, setLoading] = loadingValue;
   const [size, setSize] = sizeValue;
   const [inputSearch, setInputSearch] = useState("");
-  const [query, setQuery] = useState("facebook");
+  const [query, setQuery] = useState("gcrodrigues");
 
   useEffect(() => {
     const fetchApi = async () => {
