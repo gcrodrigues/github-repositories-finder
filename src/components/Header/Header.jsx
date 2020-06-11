@@ -14,7 +14,7 @@ const Header = () => {
       setSize(window.innerWidth);
     }
     window.addEventListener("resize", windowResize);
-  });
+  }, []);
 
   return (
     <div className={styles.container}>
@@ -22,7 +22,7 @@ const Header = () => {
         <FaGithub style={{ marginRight: 10 }} /> Repositories
       </h1>
 
-      {size <= 770 ? "" : <Form />}
+      {size > 770 && <Form />}
     </div>
   );
 };
